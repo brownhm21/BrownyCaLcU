@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Browny Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator dark">
+            <div class="theme-toggler active">
+                <i class="toggler-icon"></i>
+            </div>
+            
+            <div class="display-screen ">
+                <div id="display">
+                    <input class="display" id="screen" type="text" placeholder="0">
+                </div>
+            </div>
+            
+            <button class="btn-expand" id="expand" onclick="expand()">expand</button>
+            
+            <div class="buttons">
+                
+                
+                <table>
+                    <tr> 
+                        <div class="browny" id="items"><td><button class="btn-operator" onclick="sqrt()">√</button></td></div>
+                        <div class="browny"><td><button class="btn-operator" onclick="e()">e</button></td></div>
+                        <div class="browny"><td><button class="btn-operator" onclick="pow()">x<sup>2</sup></button></td></div>
+                        <div class="browny"><td><button class="btn-operator" onclick="e()">e</button></td></div>
+                        <div class="browny"><td><button class="btn-operator" onclick="powx()">a<sup>x</sup></button></td></div>
+                        
+                    </tr>
+                    
+                    <tr> 
+                        <div class="browny" id="items"><td><button class="btn-operator" onclick="fact()">x!</button></td></div>
+                        <td><button class="btn-operator"  id="clear" onclick= "document.getElementById('screen').value = ''">C</button></td>
+                        <td><button class="btn-operator" id="/">&divide;</button></td>
+                        <td><button class="btn-operator" id="*">&times;</button></td>
+                        <td><button class="btn-operator" id="backspace" >AC</button></td>
+                    </tr>
+            
+                    <tr>
+                        <div class="browny" id="items"><td><button class="btn-operator" onclick="sin()">sin</button></td></div>
+                        <td><button class="btn-number" id="7">7</button></td></div>
+                        <td><button class="btn-number" id="8">8</button></td>
+                        <td><button class="btn-number" id="9">9</button></td>
+                        <td><button class="btn-operator" id="-">-</button></td>
+                    </tr>
+                    <tr>
+                        <div class="items" id="items"><td><button class="btn-operator" onclick="cos()">cos</button></td></div>
+                        <td><button class="btn-number" id="4">4</button></td>
+                        <td><button class="btn-number" id="5">5</button></td>
+                        <td><button class="btn-number" id="6">6</button></td>
+                        <td><button class="btn-operator" id="+">+</button></td>
+                    </tr>
+                    <tr>
+                        <div class="browny" id="items"><td><button class="btn-operator" onclick="tan()">tan</button></td></div>
+                        <td><button class="btn-number" id="1">1</button></td>
+                        <td><button class="btn-number" id="2">2</button></td>
+                        <td><button class="btn-number" id="3">3</button></td>
+                        <td rowspan="2"><button class="btn-equal" id="equal" onclick="equal()">=</button></td>
+                    </tr>
+                    <tr>
+                        <div class="items" id="items"><td><button class="btn-operator" onclick="log()">log</button></td></div>
+                        <td><button class="btn-operator" onclick="pi()">π</button></td>
+                        <td><button class="btn-number" id="0">0</button></td>
+                        <td><button class="btn" >.</button></td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        var state=false;
+        function expand(){
+            if(state==false){
+                document.getElementById("items").style.transform='scaleX(1)';
+                document.getElementById("btn-expand").style.transform='rotate(45deg)';
+                state=true;
+
+            }else{
+                document.getElementById("items").style.transform='scaleX(0)';
+                document.getElementById("btn-expand").style.transform='rotate(0)';
+                state=false;
+            }
+
+        }
+
+    </script>
+    <script type="text/javascript">
+    function cleart() {
+        document.getElementById("screen").reset();
+    }
+</script>
+</body>
+</html>
